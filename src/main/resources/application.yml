@@ -8,4 +8,6 @@ server:
       username: postgres
       password: postgres
       driver-class-name: org.postgresql.Driver
-
+    jpa:
+      hibernate:
+        ddl-auto: update
