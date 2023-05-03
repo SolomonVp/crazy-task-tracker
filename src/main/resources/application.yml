@@ -1,13 +1,30 @@
----
+#---
+#server:
+#  port: 8080
+#
+#  spring:
+#    datasource:
+#      url: jdbc:postgresql://localhost/crazy-task-tracker
+#      username: postgres
+#      password: postgres
+#      driver-class-name: org.postgresql.Driver
+#    jpa:
+#      hibernate:
+#        ddl-auto: update
+#        show-sql: true
+
 server:
   port: 8080
 
-  spring:
-    datasource:
-      url: jdbc:postgresql://localhost/crazy-task-tracker
-      username: postgres
-      password: postgres
-      driver-class-name: org.postgresql.Driver
-    jpa:
-      hibernate:
-        ddl-auto: update
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/crazy-task-tracker
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
